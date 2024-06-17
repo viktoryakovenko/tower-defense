@@ -14,7 +14,7 @@ namespace Code.Infrastructure.States
             _sceneLoader = sceneLoader;
             _curtain = curtain;
         }
-        
+
         public void Enter(string sceneName)
         {
             _curtain.Show();
