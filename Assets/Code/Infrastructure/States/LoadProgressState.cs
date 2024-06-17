@@ -2,14 +2,20 @@
 {
     public class LoadProgressState : IState
     {
-        public void Exit()
+        private readonly GameStateMachine _stateMachine;
+
+        public LoadProgressState(GameStateMachine stateMachine)
         {
-            
+            _stateMachine = stateMachine;
         }
 
         public void Enter()
         {
-            
+            _stateMachine.Enter<LoadLevelState, string>(Scenes.Main);
+        }
+
+        public void Exit()
+        {
         }
     }
 }
