@@ -28,7 +28,7 @@ namespace Code.Infrastructure.States
 
         private void OnLoaded()
         {
-            //TODO: Entry point to game loop
+            _stateMachine.Enter<GameLoopState>();
         }
     }
 }
