@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 7607007143075680642}
   - component: {fileID: 8981594079090678091}
   - component: {fileID: 2135320751316587103}
+  - component: {fileID: 6200036725364812296}
+  - component: {fileID: 8548591182337021677}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -139,6 +141,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6200036725364812296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852412292289758249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362e290730db01142b03a158062490aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponAnimator: {fileID: 8981594079090678091}
+--- !u!114 &8548591182337021677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852412292289758249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9300e501acb7ac642854754c7c284701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponAnimator: {fileID: 6200036725364812296}
+  _damage: 10
+  _attackCooldown: 2
 --- !u!1 &9029627392313476670
 GameObject:
   m_ObjectHideFlags: 0

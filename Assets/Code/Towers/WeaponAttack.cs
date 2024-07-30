@@ -1,11 +1,10 @@
 using UnityEngine;
 
-namespace Code.Enemies
+namespace Code.Towers
 {
-    [RequireComponent(typeof(EnemyAnimator))]
-    public class EnemyAttack : MonoBehaviour
+    public class WeaponAttack : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimator _animator;
+        [SerializeField] private WeaponAnimator _weaponAnimator;
         [SerializeField] private float _damage;
         [SerializeField] private float _attackCooldown;
 
@@ -32,7 +31,7 @@ namespace Code.Enemies
 
         private void StartAttack()
         {
-            _animator.PlayAttack();
+            _weaponAnimator.PlayAttack();
 
             _isAttacking = true;
         }
