@@ -12,9 +12,6 @@ namespace Code.Towers
         private bool _attackIsActive;
         private float _currentAttackCooldown;
 
-        private void Awake() =>
-            _attackIsActive = true;
-
         private void Update()
         {
             UpdateCooldown();

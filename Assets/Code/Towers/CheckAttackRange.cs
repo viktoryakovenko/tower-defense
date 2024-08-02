@@ -11,7 +11,7 @@ namespace Code.Towers
         private void Start()
         {
             TriggerObserver.TriggerEnter += TriggerEnter;
-            TriggerObserver.TriggerExit -= TriggerExit;
+            TriggerObserver.TriggerExit += TriggerExit;
 
             WeaponAttack.DisableAttack();
         }
