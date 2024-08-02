@@ -27,10 +27,8 @@ namespace Code.Enemies
             set => _max = value;
         }
 
-        private void Start()
-        {
+        private void Start() =>
             StartCoroutine(TakeDamageEveryFiveSeconds());
-        }
 
         public void TakeDamage(float damage)
         {
@@ -45,8 +43,8 @@ namespace Code.Enemies
         {
             while (true)
             {
-                yield return new WaitForSeconds(5f);
-                TakeDamage(5);
+                yield return new WaitForSecondsRealtime(5f);
+                TakeDamage(10);
             }
         }
     }

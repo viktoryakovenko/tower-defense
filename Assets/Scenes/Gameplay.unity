@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 1071418833}
   - component: {fileID: 1071418834}
   - component: {fileID: 1071418837}
+  - component: {fileID: 1071418838}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -441,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c869b91b73b06a540bbc03d645e3e58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  MoveSpeed: 0.5
 --- !u!114 &1071418834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +512,20 @@ MonoBehaviour:
   Animator: {fileID: 1071418835}
   _current: 50
   _max: 50
+--- !u!114 &1071418838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071418829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e533546ce6a444869eda696ad5352c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 1071418837}
+  Animator: {fileID: 1071418835}
 --- !u!1 &1402354079
 GameObject:
   m_ObjectHideFlags: 0
