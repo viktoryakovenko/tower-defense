@@ -23,6 +23,12 @@ namespace Code.Towers
                 StartAttack();
         }
 
+        public void EnableAttack() =>
+            _attackIsActive = true;
+
+        public void DisableAttack() =>
+            _attackIsActive = false;
+
         private void OnAttackEnded()
         {
             _currentAttackCooldown = _attackCooldown;
