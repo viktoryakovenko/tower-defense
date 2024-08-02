@@ -379,10 +379,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1071418832}
   - component: {fileID: 1071418830}
+  - component: {fileID: 1071418836}
   - component: {fileID: 1071418835}
   - component: {fileID: 1071418833}
   - component: {fileID: 1071418834}
-  - component: {fileID: 1071418836}
+  - component: {fileID: 1071418837}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -495,6 +496,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1071418837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071418829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8088980cb0fd4736a357d7cedc2579cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1071418835}
+  _current: 50
+  _max: 50
 --- !u!1 &1402354079
 GameObject:
   m_ObjectHideFlags: 0
