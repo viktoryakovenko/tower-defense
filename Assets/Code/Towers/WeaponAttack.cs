@@ -1,3 +1,4 @@
+using Code.Projectiles;
 using UnityEngine;
 
 namespace Code.Towers
@@ -5,7 +6,7 @@ namespace Code.Towers
     public class WeaponAttack : MonoBehaviour
     {
         [SerializeField] private WeaponAnimator _weaponAnimator;
-        [SerializeField] private float _damage;
+        [SerializeField] private Projectile _projectile;
         [SerializeField] private float _attackCooldown;
 
         private bool _isAttacking;
