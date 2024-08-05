@@ -7,7 +7,12 @@ namespace Code.Infrastructure.Services
 {
     public class GameFactory : IGameFactory
     {
-        private StaticDataService _staticData;
+        private IStaticDataService _staticData;
+
+        public GameFactory(IStaticDataService staticData)
+        {
+            _staticData = staticData;
+        }
 
         public GameObject CreateTower(TowerTypeId typeId, Transform parent)
         {
