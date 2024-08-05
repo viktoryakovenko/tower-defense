@@ -1,4 +1,3 @@
-using Code.Infrastructure.Services;
 using Code.Logic;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ namespace Code.Infrastructure.States
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _currentState;
 
-        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services)
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain)
         {
             _states = new Dictionary<Type, IExitableState>
             {

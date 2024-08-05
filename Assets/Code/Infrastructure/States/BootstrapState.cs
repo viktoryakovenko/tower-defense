@@ -1,18 +1,14 @@
-﻿using Code.Infrastructure.Services;
-
-namespace Code.Infrastructure.States
+﻿namespace Code.Infrastructure.States
 {
     public class BootstrapState : IState
     {
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
-        private readonly AllServices _services;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
+        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
         {
             _sceneLoader = sceneLoader;
             _stateMachine = stateMachine;
-            _services = services;
 
             RegisterServices();
         }
