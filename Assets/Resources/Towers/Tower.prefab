@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 2155647305332992714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3157093423940891517}
+  m_Father: {fileID: 7607007143075680642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1402231986640689590
 CircleCollider2D:
@@ -116,7 +116,6 @@ Transform:
   m_Children:
   - {fileID: 2461431393642039382}
   - {fileID: 7607007143075680642}
-  - {fileID: 6509535245840757359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3852858702973984135
@@ -166,8 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponAnimator: {fileID: 3908359179402947460}
-  _damage: 10
-  _attackCooldown: 2
 --- !u!114 &1022838646534846463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,10 +219,11 @@ Transform:
   m_GameObject: {fileID: 6852412292289758249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.511, y: 1.124, z: 0}
+  m_LocalPosition: {x: 0.7, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6509535245840757359}
   m_Father: {fileID: 3157093423940891517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2135320751316587103
