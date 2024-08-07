@@ -6,10 +6,10 @@ namespace Code.Enemies
     {
         public float MoveSpeed;
 
-        private void Update()
+        public void Move(Vector3 to)
         {
             float normalizedSpeed = MoveSpeed * Time.deltaTime;
-            transform.position += new Vector3(normalizedSpeed, 0);
+            transform.position = Vector2.MoveTowards(transform.position, to, normalizedSpeed);
         }
     }
 }
