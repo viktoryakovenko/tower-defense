@@ -20,8 +20,8 @@ namespace Code.Infrastructure.Services
 
             GameObject tower = Object.Instantiate(towerStaticData.Prefab, parent.position, Quaternion.identity, parent);
 
-            Projectile projectile = towerStaticData.Projectile;
-            projectile.Construct(towerStaticData.Damage);
+            Arrow projectile = (Arrow)towerStaticData.Projectile;
+            projectile.Construct(towerStaticData.Damage, tower.GetComponent<RotateWeaponToEnemy>().EnemyTransform);
 
             tower.GetComponent<WeaponAttack>().Construct(projectile, towerStaticData.AttackCooldown);
 
