@@ -2,8 +2,12 @@ using UnityEngine;
 
 namespace Code.Towers
 {
-    public class RotateToEnemy : MonoBehaviour
+    public class RotateWeaponToEnemy : MonoBehaviour
     {
+        public Transform Weapon;
+
+        public Transform EnemyTransform => _enemyTransform;
+
         [SerializeField] private float _speed;
         [SerializeField] private Transform _enemyTransform;
 
@@ -19,11 +23,11 @@ namespace Code.Towers
         {
             UpdatePositionToLookAt();
 
-            transform.rotation = SmoothedRotation(transform.rotation, _positionToLook);
+            Weapon.rotation = SmoothedRotation(Weapon.rotation, _positionToLook);
         }
 
         private void UpdatePositionToLookAt() =>
-            _positionToLook = _enemyTransform.position - transform.position;
+            _positionToLook = _enemyTransform.position - Weapon.position;
 
         private Quaternion SmoothedRotation(Quaternion rotation, Vector3 positionToLook) =>
             Quaternion.Lerp(rotation, TargetRotation(positionToLook), SpeedFactor());
