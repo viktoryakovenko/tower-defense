@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingCurtain: {fileID: 6792005720495525072, guid: 87ac766f41baba14184b02baca2378a6, type: 3}
+  _coroutineRunner: {fileID: 2520413945327338231, guid: da5fe9e32c33dd24291f25d8a628a850, type: 3}
