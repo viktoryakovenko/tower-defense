@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Code.Infrastructure.Services
@@ -7,7 +8,7 @@ namespace Code.Infrastructure.Services
         bool AutoExpand { get; set; }
         T Prefab { get; }
         Transform Container { get; }
-        T GetFreeElement();
+        T GetFreeElement(Action<T> onGetAction);
         bool HasFreeElement(out T element);
     }
 }

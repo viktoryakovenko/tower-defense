@@ -29,13 +29,20 @@ namespace Code.Infrastructure.Services
             CreatePool(count);
         }
 
-        public T GetFreeElement()
+        public T GetFreeElement(Action<T> onGetAction = null)
         {
             if (HasFreeElement(out T element))
+            {
+                onGetAction?.Invoke(element);
                 return element;
+            }
 
             if (AutoExpand)
-                return CreateObject(true);
+            {
+                T createdObject = CreateObject(true);
+                onGetAction?.Invoke(createdObject);
+                return createdObject;
+            }
 
             throw new Exception($"There is no free elements in pool of type {typeof(T)}");
         }

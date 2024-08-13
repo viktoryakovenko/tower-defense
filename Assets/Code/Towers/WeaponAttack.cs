@@ -19,33 +19,27 @@ namespace Code.Towers
         private bool _attackIsActive;
         private float _currentAttackCooldown;
         private GameObjectPool<Projectile> _projectilePool;
+        private float _damage;
 
         private void Awake()
         {
-            _projectile.Construct(10, _enemy);
-            Construct(_projectile, _attackCooldown);
+            Construct(_projectile, _attackCooldown, 10f);
         }
 
-        public void Construct(Projectile projectile, float attackCooldown)
+        public void Construct(Projectile projectile, float attackCooldown, float damage)
         {
             _projectile = projectile;
-            Debug.Log(projectile.Damage);
             _attackCooldown = attackCooldown;
-            _projectilePool = new GameObjectPool<Projectile>(_projectile, _projectilesCount, _muzzlePoint);
-        }
-
-        public void Construct(float attackCooldown)
-        {
-            _attackCooldown = attackCooldown;
-            _projectilePool = new GameObjectPool<Projectile>(_projectile, _projectilesCount, _muzzlePoint);
+            _damage = damage;
+            _projectilePool = new GameObjectPool<Projectile>(_projectile, _projectilesCount, new GameObject("[Projectiles]").transform);
         }
 
         private void Update()
         {
-            UpdateCooldown();
-
             if (CanAttack())
                 StartAttack();
+
+            UpdateCooldown();
         }
 
         public void EnableAttack() =>
@@ -62,7 +56,12 @@ namespace Code.Towers
 
         private void OnShot()
         {
-            _projectilePool.GetFreeElement();
+            _projectilePool.GetFreeElement(projectile =>
+            {
+                projectile.Construct(_damage, _enemy);
+                projectile.transform.position = _muzzlePoint.position;
+                projectile.transform.up = _muzzlePoint.up;
+            });
         }
 
         private void StartAttack()

@@ -1,4 +1,3 @@
-using Code.Projectiles;
 using Code.StaticData;
 using Code.Towers;
 using UnityEngine;
@@ -20,10 +19,7 @@ namespace Code.Infrastructure.Services
 
             GameObject tower = Object.Instantiate(towerStaticData.Prefab, parent.position, Quaternion.identity, parent);
 
-            Arrow projectile = (Arrow)towerStaticData.Projectile;
-            projectile.Construct(towerStaticData.Damage, tower.GetComponent<RotateWeaponToEnemy>().EnemyTransform);
-
-            tower.GetComponent<WeaponAttack>().Construct(projectile, towerStaticData.AttackCooldown);
+            tower.GetComponent<WeaponAttack>().Construct(towerStaticData.Projectile, towerStaticData.AttackCooldown, towerStaticData.Damage);
 
             return tower;
         }
