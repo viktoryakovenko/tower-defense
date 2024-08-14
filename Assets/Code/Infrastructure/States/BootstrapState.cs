@@ -2,10 +2,10 @@
 {
     public class BootstrapState : IState
     {
-        private readonly GameStateMachine _stateMachine;
+        private readonly IGameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+        public BootstrapState(IGameStateMachine stateMachine, SceneLoader sceneLoader)
         {
             _sceneLoader = sceneLoader;
             _stateMachine = stateMachine;

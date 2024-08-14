@@ -1,16 +1,20 @@
-﻿using Code.Infrastructure.Coroutines;
-using Code.Infrastructure.States;
-using Code.Logic;
+﻿using Code.Infrastructure.States;
+using Zenject;
 
 namespace Code.Infrastructure
 {
-    public class Game
+    public class Game : IInitializable, IGame
     {
-        public GameStateMachine StateMachine;
+        private IGameStateMachine _stateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
-        {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain);
-        }
+        public Game(IGameStateMachine stateMachine) =>
+            _stateMachine = stateMachine;
+
+        //Entry point
+        public void Initialize() =>
+            _stateMachine.Enter<BootstrapState>();
+
+        public void EnterState<TState>() where TState : class, IState =>
+            _stateMachine.Enter<TState>();
     }
 }

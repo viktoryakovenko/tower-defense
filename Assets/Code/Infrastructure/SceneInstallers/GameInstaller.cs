@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Coroutines;
+using Code.Infrastructure.States;
 using Code.Logic;
 using UnityEngine;
 using Zenject;
@@ -14,17 +17,42 @@ namespace Code.Infrastructure.SceneInstallers
         {
             BindLoadingCurtain();
             BindCoroutineRunner();
+            BindSceneLoader();
+            BindGameStateMachine();
+            SetupStates();
+
+            Container.BindInterfacesAndSelfTo<Game>().AsSingle();
         }
 
-        private void BindLoadingCurtain()
+        private void SetupStates()
         {
-            LoadingCurtain curtainInstance = Container.InstantiatePrefabForComponent<LoadingCurtain>(_loadingCurtain);
-            Container.Bind<LoadingCurtain>().FromInstance(curtainInstance);
+            List<IExitableState> states = new List<IExitableState>()
+            {
+                new BootstrapState(Container.Resolve<IGameStateMachine>(), Container.Resolve<SceneLoader>()),
+                new LoadProgressState(Container.Resolve<IGameStateMachine>()),
+                new LoadLevelState(
+                    Container.Resolve<IGameStateMachine>(),
+                    Container.Resolve<SceneLoader>(),
+                    Container.Resolve<LoadingCurtain>()
+                ),
+                new GameLoopState(Container.Resolve<IGameStateMachine>())
+            };
+
+            Container.Resolve<IGameStateMachine>().Initialize(states);
         }
-        private void BindCoroutineRunner()
-        {
-            CoroutineRunner runnerInstance = Container.InstantiatePrefabForComponent<CoroutineRunner>(_coroutineRunner);
-            Container.BindInterfacesAndSelfTo<CoroutineRunner>().FromInstance(runnerInstance);
-        }
+
+        private void BindLoadingCurtain() =>
+            Container.Bind<LoadingCurtain>()
+                .FromComponentInNewPrefabResource(AssetPath.CurtainPath).AsSingle();
+
+        private void BindCoroutineRunner() =>
+            Container.Bind<ICoroutineRunner>().To<CoroutineRunner>()
+                .FromComponentInNewPrefabResource(AssetPath.CoroutineRunnerPath).AsSingle();
+
+        private void BindGameStateMachine() =>
+            Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
+
+        private void BindSceneLoader() =>
+            Container.Bind<SceneLoader>().AsSingle();
     }
 }

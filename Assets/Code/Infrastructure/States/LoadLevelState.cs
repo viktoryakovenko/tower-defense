@@ -4,11 +4,11 @@ namespace Code.Infrastructure.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {
-        private readonly GameStateMachine _stateMachine;
+        private readonly IGameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain curtain)
+        public LoadLevelState(IGameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain curtain)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
