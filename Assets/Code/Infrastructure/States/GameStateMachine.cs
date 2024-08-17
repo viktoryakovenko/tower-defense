@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Code.Logic;
 
 namespace Code.Infrastructure.States
 {
@@ -8,15 +9,15 @@ namespace Code.Infrastructure.States
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _currentState;
 
-        public GameStateMachine()
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain)
         {
-            _states = new Dictionary<Type, IExitableState>();
-        }
-
-        public void Initialize(IEnumerable<IExitableState> states)
-        {
-            foreach (IExitableState state in states)
-                AddState(state);
+            _states = new Dictionary<Type, IExitableState>
+            {
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
+                [typeof(LoadProgressState)] = new LoadProgressState(this),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain),
+                [typeof(GameLoopState)] = new GameLoopState(this)
+            };
         }
 
         public void Enter<TState>() where TState : class, IState
@@ -40,9 +41,6 @@ namespace Code.Infrastructure.States
 
             return state;
         }
-
-        private void AddState(IExitableState state) =>
-            _states.Add(state.GetType(), state);
 
         private TState GetState<TState>() where TState : class, IExitableState =>
             _states[typeof(TState)] as TState;

@@ -10,11 +10,13 @@ namespace Code.Infrastructure
         public Game(IGameStateMachine stateMachine) =>
             _stateMachine = stateMachine;
 
-        //Entry point
         public void Initialize() =>
-            _stateMachine.Enter<BootstrapState>();
+            EnterGame();
 
         public void EnterState<TState>() where TState : class, IState =>
             _stateMachine.Enter<TState>();
+
+        private void EnterGame() =>
+            _stateMachine.Enter<BootstrapState>();
     }
 }
