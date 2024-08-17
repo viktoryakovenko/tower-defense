@@ -11,7 +11,7 @@ namespace Code.Towers
         [SerializeField] private float _speed;
         [SerializeField] private Transform _enemyTransform;
 
-        private Vector3 _positionToLook;
+        private Vector2 _positionToLook;
 
         private void Update()
         {
@@ -23,19 +23,22 @@ namespace Code.Towers
         {
             UpdatePositionToLookAt();
 
-            Weapon.rotation = SmoothedRotation(Weapon.rotation, _positionToLook);
+            Weapon.rotation = TargetRotation(_positionToLook);;
         }
 
         private void UpdatePositionToLookAt() =>
             _positionToLook = _enemyTransform.position - Weapon.position;
 
-        private Quaternion SmoothedRotation(Quaternion rotation, Vector3 positionToLook) =>
-            Quaternion.Lerp(rotation, TargetRotation(positionToLook), SpeedFactor());
+        private Quaternion TargetRotation(Vector2 positionToLook) =>
+            Quaternion.AngleAxis(TargetAngle(positionToLook), Vector3.forward);
 
-        private Quaternion TargetRotation(Vector3 positionToLook)
+        private float TargetAngle(Vector2 positionToLook)
         {
-            float angle = Mathf.Atan2(positionToLook.y, positionToLook.x) * Mathf.Rad2Deg - 90f;
-            return Quaternion.AngleAxis(angle, Vector3.forward);
+            float angle = Mathf.Atan2(positionToLook.y, positionToLook.x) * Mathf.Rad2Deg - 90;
+            if (angle < 0)
+                angle += 360f;
+
+            return angle;
         }
 
         private float SpeedFactor() =>
