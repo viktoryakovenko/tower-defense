@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace CodeBase.UI.Services.Factory
+namespace Code.UI.Services.Factory
 {
     public class UIFactory : IUIFactory
     {

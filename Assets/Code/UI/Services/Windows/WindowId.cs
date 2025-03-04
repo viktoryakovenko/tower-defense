@@ -1,4 +1,4 @@
-namespace CodeBase.UI.Services.Windows
+namespace Code.UI.Services.Windows
 {
     public enum WindowId
     {

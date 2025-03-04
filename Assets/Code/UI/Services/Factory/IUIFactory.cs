@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace CodeBase.UI.Services.Factory
+namespace Code.UI.Services.Factory
 {
     public interface IUIFactory
     {
