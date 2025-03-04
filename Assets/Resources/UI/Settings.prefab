@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5408750100675591436}
   - component: {fileID: 2284325770663390425}
   - component: {fileID: 5331212365570115912}
+  - component: {fileID: 1283381431668099263}
   - component: {fileID: 1796980991809234695}
   m_Layer: 5
   m_Name: AdsButton
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1283381431668099263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538114652071616530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 1796980991809234695}
 --- !u!114 &1796980991809234695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 5331212365570115912}
   Image: {fileID: 2284325770663390425}
   ActivatedSprite: {fileID: 21300000, guid: 8c6bcddbaa8c0b54dad2c0b17ac97646, type: 3}
   DeactivatedSprite: {fileID: 21300000, guid: 92154e1577ee73c4fade5ace2b383b86, type: 3}
+  _toggleEnabled: 0
 --- !u!1 &706841895148558205
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +843,7 @@ GameObject:
   - component: {fileID: 7883095016027055350}
   - component: {fileID: 1787401153672564835}
   - component: {fileID: 6184097022678278949}
+  - component: {fileID: 5857101327072805329}
   - component: {fileID: 6241716311880486694}
   m_Layer: 5
   m_Name: SoundToggle
@@ -937,6 +953,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5857101327072805329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352400220166937604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 6241716311880486694}
 --- !u!114 &6241716311880486694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,10 +979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 6184097022678278949}
   Image: {fileID: 1787401153672564835}
   ActivatedSprite: {fileID: 21300000, guid: 08f80163cdc13404ab1a83d09da0951c, type: 3}
   DeactivatedSprite: {fileID: 21300000, guid: 1fec7b643cd1f3648807c21c8d1ba827, type: 3}
+  _toggleEnabled: 1
 --- !u!1 &4279720995254489962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1521,7 @@ GameObject:
   - component: {fileID: 8565562930136114575}
   - component: {fileID: 1118885501781554148}
   - component: {fileID: 1583230738906759784}
+  - component: {fileID: 5894431367730813918}
   - component: {fileID: 2607138845498401256}
   m_Layer: 5
   m_Name: MusicToggle
@@ -1600,6 +1631,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5894431367730813918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823119558802860460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 2607138845498401256}
 --- !u!114 &2607138845498401256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,10 +1657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1583230738906759784}
   Image: {fileID: 1118885501781554148}
   ActivatedSprite: {fileID: 21300000, guid: 398ddabec35a5e545b597f41583fff08, type: 3}
   DeactivatedSprite: {fileID: 21300000, guid: ebd53bf46e930af4abb88ccedc81acf0, type: 3}
+  _toggleEnabled: 1
 --- !u!1 &5833220998845976658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2301,7 @@ GameObject:
   - component: {fileID: 6688505112343060921}
   - component: {fileID: 4480485521095007760}
   - component: {fileID: 6007151687058937910}
+  - component: {fileID: 3960243443172317471}
   - component: {fileID: 4454189733297014485}
   m_Layer: 5
   m_Name: VibrateButton
@@ -2365,6 +2411,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3960243443172317471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653196348810073938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 4454189733297014485}
 --- !u!114 &4454189733297014485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2377,10 +2437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 6007151687058937910}
   Image: {fileID: 4480485521095007760}
   ActivatedSprite: {fileID: 21300000, guid: 89f970a0a1e5b4a45904cb34a4bba952, type: 3}
   DeactivatedSprite: {fileID: 21300000, guid: 0c4de1b53d5fb064086fca628afc0e27, type: 3}
+  _toggleEnabled: 0
 --- !u!1 &6771354798546058957
 GameObject:
   m_ObjectHideFlags: 0
