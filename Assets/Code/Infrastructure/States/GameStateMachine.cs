@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Code.Logic;
+using UnityEngine;
 
 namespace Code.Infrastructure.States
 {
@@ -15,6 +16,7 @@ namespace Code.Infrastructure.States
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadProgressState)] = new LoadProgressState(this),
+                [typeof(MainMenuState)] = new MainMenuState(this, sceneLoader),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain),
                 [typeof(GameLoopState)] = new GameLoopState(this)
             };
