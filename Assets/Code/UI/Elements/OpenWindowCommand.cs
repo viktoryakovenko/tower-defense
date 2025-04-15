@@ -16,9 +16,6 @@ namespace Code.UI.Elements
         public override void Execute() =>
             Open();
 
-        private void Awake() =>
-            Button.onClick.AddListener(Open);
-
         private void Open() =>
             _windowService.Open(WindowId);
     }
