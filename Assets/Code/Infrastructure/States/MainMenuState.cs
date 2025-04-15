@@ -19,10 +19,5 @@ namespace Code.Infrastructure.States
         public void Exit()
         {
         }
-
-        private void OnLoaded()
-        {
-            _stateMachine.Enter<GameLoopState>();
-        }
     }
 }
