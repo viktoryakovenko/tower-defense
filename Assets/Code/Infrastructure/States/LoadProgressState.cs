@@ -11,7 +11,7 @@
 
         public void Enter()
         {
-            _stateMachine.Enter<LoadLevelState, string>(Scenes.Gameplay);
+            _stateMachine.Enter<LoadLevelState, string>(Scenes.Menu);
         }
 
         public void Exit()
