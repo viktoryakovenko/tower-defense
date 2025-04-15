@@ -4,5 +4,6 @@ namespace Code.Infrastructure.AssetManagement
     {
         public const string CurtainPath = "Hud/Curtain";
         public const string CoroutineRunnerPath = "Infrastructure/CoroutineRunner";
+        public const string MenuHudPath = "Hud/MainMenuHUD";
     }
 }
