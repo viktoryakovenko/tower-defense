@@ -1,7 +1,6 @@
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Services;
 using Code.StaticData.Windows;
-using Code.UI.Elements;
 using Code.UI.Services.Windows;
 using Code.UI.Windows.Settings;
 using UnityEngine;
