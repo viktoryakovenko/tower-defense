@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.UI.Elements
+namespace Code.UI.Elements.Commands
 {
     public abstract class CommandBase: MonoBehaviour
     {

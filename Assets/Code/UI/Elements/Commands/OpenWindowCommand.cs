@@ -1,7 +1,7 @@
 using Code.UI.Services.Windows;
 using UnityEngine.UI;
 
-namespace Code.UI.Elements
+namespace Code.UI.Elements.Commands
 {
     public class OpenWindowCommand : CommandBase
     {

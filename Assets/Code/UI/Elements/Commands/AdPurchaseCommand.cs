@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.UI.Elements
+namespace Code.UI.Elements.Commands
 {
     public class AdPurchaseCommand : CommandBase
     {
