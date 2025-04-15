@@ -155,6 +155,8 @@ GameObject:
   - component: {fileID: 1438893180322233562}
   - component: {fileID: 9064171764159121886}
   - component: {fileID: 2720881628021119842}
+  - component: {fileID: 4425495432481518702}
+  - component: {fileID: 5239034339646699167}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -265,6 +267,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4425495432481518702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298575215343822762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 5239034339646699167}
+--- !u!114 &5239034339646699167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298575215343822762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4591329dfafc4a7fa019386d7c92016c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7831954272165514971
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenWindowCommands:
   - {fileID: 7858413846535067088}
+  StartGameCommand: {fileID: 5239034339646699167}
 --- !u!1001 &4966625911902052515
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.States;
 using Code.UI.Elements;
 using Code.UI.Elements.Commands;
 using Code.UI.Services.Windows;
@@ -10,11 +11,13 @@ namespace Code.UI.Services.Factory
     {
         private readonly IAssets _assets;
         private readonly IWindowService _windowService;
+        private readonly IGameStateMachine _gameStateMachine;
 
-        public MenuFactory(IAssets assets, IWindowService windowService)
+        public MenuFactory(IAssets assets, IWindowService windowService, IGameStateMachine gameStateMachine)
         {
             _assets = assets;
             _windowService = windowService;
+            _gameStateMachine = gameStateMachine;
         }
 
         public GameObject CreateMenuHUD()
@@ -23,6 +26,8 @@ namespace Code.UI.Services.Factory
 
             foreach (OpenWindowCommand openWindowButton in menuHud.GetComponent<MenuUI>().OpenWindowCommands)
                 openWindowButton.Construct(_windowService);
+
+            menuHud.GetComponent<MenuUI>().StartGameCommand.Construct(_gameStateMachine);
 
             return menuHud;
         }
