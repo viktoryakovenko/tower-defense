@@ -1,5 +1,6 @@
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Coroutines;
+using Code.Infrastructure.Services.Audio;
 using Code.Infrastructure.States;
 using Code.Logic;
 using Zenject;
@@ -13,6 +14,7 @@ namespace Code.Infrastructure.SceneInstallers
             BindLoadingCurtain();
             BindCoroutineRunner();
             BindSceneLoader();
+            BindSoundServices();
             BindGameStateMachine();
 
             BindGame();
@@ -34,5 +36,12 @@ namespace Code.Infrastructure.SceneInstallers
 
         private void BindSceneLoader() =>
             Container.Bind<SceneLoader>().AsSingle();
+
+        private void BindSoundServices()
+        {
+            Container.Bind<ISFXService>().To<SFXService>().AsSingle();
+            Container.Bind<IMusicService>().To<MusicService>().AsSingle();
+            Container.Bind<IVibrationService>().To<VibrationService>().AsSingle();
+        }
     }
 }
