@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.States;
 using Code.UI.Elements;
