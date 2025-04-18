@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.States;
 using Code.UI.Elements;
@@ -24,10 +25,10 @@ namespace Code.UI.Services.Factory
         {
             GameObject menuHud = _assets.Instantiate(AssetPath.MenuHudPath);
 
-            foreach (OpenWindowCommand openWindowButton in menuHud.GetComponent<MenuUI>().OpenWindowCommands)
-                openWindowButton.Construct(_windowService);
+            var menuUI = menuHud.GetComponent<MenuUI>();
 
-            menuHud.GetComponent<MenuUI>().StartGameCommand.Construct(_gameStateMachine);
+            menuUI.PlayButtonHandler.Construct(new StartGameCommand(_gameStateMachine));
+            menuUI.SettingsButtonHandler.Construct(new OpenWindowCommand(_windowService, WindowId.Settings));
 
             return menuHud;
         }

@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 5408750100675591436}
   - component: {fileID: 2284325770663390425}
   - component: {fileID: 5331212365570115912}
-  - component: {fileID: 1283381431668099263}
-  - component: {fileID: 6900455533723684990}
+  - component: {fileID: 7012851858418072543}
   m_Layer: 5
   m_Name: AdsButton
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1283381431668099263
+--- !u!114 &7012851858418072543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,26 +130,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 538114652071616530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _commands:
-  - {fileID: 6900455533723684990}
---- !u!114 &6900455533723684990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538114652071616530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff86c2ba55ce998449ad700a1f5d28c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Image: {fileID: 2284325770663390425}
-  ActivatedSprite: {fileID: 21300000, guid: 8c6bcddbaa8c0b54dad2c0b17ac97646, type: 3}
-  _isBought: 1
+  _toggleImage: {fileID: 2284325770663390425}
+  _activatedSprite: {fileID: 21300000, guid: 8c6bcddbaa8c0b54dad2c0b17ac97646, type: 3}
+  _deactivatedSprite: {fileID: 21300000, guid: 92154e1577ee73c4fade5ace2b383b86, type: 3}
+  _button: {fileID: 5331212365570115912}
 --- !u!1 &706841895148558205
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +646,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 1855836107032176494}
+  SoundButton: {fileID: 8354044958563054760}
+  MusicButton: {fileID: 9075733185371882519}
+  VibrationButton: {fileID: 2886321851901786081}
+  AdRemoveButton: {fileID: 7012851858418072543}
+  SoundSlider: {fileID: 3573444594617702761}
+  MusicSlider: {fileID: 3795523755701756074}
 --- !u!1 &2683117914981022793
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,8 +848,7 @@ GameObject:
   - component: {fileID: 7883095016027055350}
   - component: {fileID: 1787401153672564835}
   - component: {fileID: 6184097022678278949}
-  - component: {fileID: 5857101327072805329}
-  - component: {fileID: 6241716311880486694}
+  - component: {fileID: 8354044958563054760}
   m_Layer: 5
   m_Name: SoundToggle
   m_TagString: Untagged
@@ -966,7 +957,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5857101327072805329
+--- !u!114 &8354044958563054760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,27 +966,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3352400220166937604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _commands:
-  - {fileID: 6241716311880486694}
---- !u!114 &6241716311880486694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352400220166937604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Image: {fileID: 1787401153672564835}
-  ActivatedSprite: {fileID: 21300000, guid: 08f80163cdc13404ab1a83d09da0951c, type: 3}
-  DeactivatedSprite: {fileID: 21300000, guid: 1fec7b643cd1f3648807c21c8d1ba827, type: 3}
-  _toggleEnabled: 1
+  _toggleImage: {fileID: 1787401153672564835}
+  _activatedSprite: {fileID: 21300000, guid: 08f80163cdc13404ab1a83d09da0951c, type: 3}
+  _deactivatedSprite: {fileID: 21300000, guid: 1fec7b643cd1f3648807c21c8d1ba827, type: 3}
+  _button: {fileID: 6184097022678278949}
 --- !u!1 &4279720995254489962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842914446917754124}
   - component: {fileID: 2867041120806259042}
+  - component: {fileID: 3795523755701756074}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -1486,6 +1464,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3795523755701756074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347547374229532489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98977cf3f889444eb7a974ac0ddc0b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 2867041120806259042}
 --- !u!1 &5461905539564445101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,8 +1525,7 @@ GameObject:
   - component: {fileID: 8565562930136114575}
   - component: {fileID: 1118885501781554148}
   - component: {fileID: 1583230738906759784}
-  - component: {fileID: 5894431367730813918}
-  - component: {fileID: 2607138845498401256}
+  - component: {fileID: 9075733185371882519}
   m_Layer: 5
   m_Name: MusicToggle
   m_TagString: Untagged
@@ -1644,7 +1634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5894431367730813918
+--- !u!114 &9075733185371882519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1653,27 +1643,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5823119558802860460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _commands:
-  - {fileID: 2607138845498401256}
---- !u!114 &2607138845498401256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5823119558802860460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Image: {fileID: 1118885501781554148}
-  ActivatedSprite: {fileID: 21300000, guid: 398ddabec35a5e545b597f41583fff08, type: 3}
-  DeactivatedSprite: {fileID: 21300000, guid: ebd53bf46e930af4abb88ccedc81acf0, type: 3}
-  _toggleEnabled: 1
+  _toggleImage: {fileID: 1118885501781554148}
+  _activatedSprite: {fileID: 21300000, guid: 398ddabec35a5e545b597f41583fff08, type: 3}
+  _deactivatedSprite: {fileID: 21300000, guid: ebd53bf46e930af4abb88ccedc81acf0, type: 3}
+  _button: {fileID: 1583230738906759784}
 --- !u!1 &5833220998845976658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,6 +1869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6668941423212342351}
   - component: {fileID: 3085940757528172030}
+  - component: {fileID: 3573444594617702761}
   m_Layer: 5
   m_Name: SoundSlider
   m_TagString: Untagged
@@ -1973,6 +1950,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3573444594617702761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6182942682898171944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98977cf3f889444eb7a974ac0ddc0b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 3085940757528172030}
 --- !u!1 &6333486017863264413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,8 +2304,7 @@ GameObject:
   - component: {fileID: 6688505112343060921}
   - component: {fileID: 4480485521095007760}
   - component: {fileID: 6007151687058937910}
-  - component: {fileID: 3960243443172317471}
-  - component: {fileID: 4454189733297014485}
+  - component: {fileID: 2886321851901786081}
   m_Layer: 5
   m_Name: VibrateButton
   m_TagString: Untagged
@@ -2424,7 +2413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3960243443172317471
+--- !u!114 &2886321851901786081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2433,27 +2422,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6653196348810073938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _commands:
-  - {fileID: 4454189733297014485}
---- !u!114 &4454189733297014485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6653196348810073938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747dcd7db4db5214da63aed221b31aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Image: {fileID: 4480485521095007760}
-  ActivatedSprite: {fileID: 21300000, guid: 89f970a0a1e5b4a45904cb34a4bba952, type: 3}
-  DeactivatedSprite: {fileID: 21300000, guid: 0c4de1b53d5fb064086fca628afc0e27, type: 3}
-  _toggleEnabled: 0
+  _toggleImage: {fileID: 4480485521095007760}
+  _activatedSprite: {fileID: 21300000, guid: 89f970a0a1e5b4a45904cb34a4bba952, type: 3}
+  _deactivatedSprite: {fileID: 21300000, guid: 0c4de1b53d5fb064086fca628afc0e27, type: 3}
+  _button: {fileID: 6007151687058937910}
 --- !u!1 &6771354798546058957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2477,7 @@ GameObject:
   - component: {fileID: 8148063879356776053}
   - component: {fileID: 3002356023622142700}
   - component: {fileID: 1826390505852293877}
+  - component: {fileID: 4176280407452771226}
   m_Layer: 5
   m_Name: AchievmentsButton
   m_TagString: Untagged
@@ -2610,6 +2586,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4176280407452771226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806335974050913988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1826390505852293877}
 --- !u!1 &6943428742432218167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,6 +2931,7 @@ GameObject:
   - component: {fileID: 7861626130485795458}
   - component: {fileID: 1048928861047397941}
   - component: {fileID: 6962527994965742601}
+  - component: {fileID: 4234858225569086784}
   m_Layer: 5
   m_Name: RateButton
   m_TagString: Untagged
@@ -3050,6 +3040,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4234858225569086784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167650683604964338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd727e38ac555d047b2b0cee541391d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 6962527994965742601}
 --- !u!1 &8631314941910817792
 GameObject:
   m_ObjectHideFlags: 0

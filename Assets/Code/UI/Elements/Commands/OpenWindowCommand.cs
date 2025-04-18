@@ -1,22 +1,22 @@
 using Code.UI.Services.Windows;
-using UnityEngine.UI;
 
 namespace Code.UI.Elements.Commands
 {
-    public class OpenWindowCommand : CommandBase
+    public class OpenWindowCommand : ICommand
     {
-        public Button Button;
-        public WindowId WindowId;
+        private readonly WindowId _windowId;
+        private readonly IWindowService _windowService;
 
-        private IWindowService _windowService;
-
-        public void Construct(IWindowService windowService) =>
+        public OpenWindowCommand(IWindowService windowService, WindowId windowId)
+        {
             _windowService = windowService;
+            _windowId = windowId;
+        }
 
-        public override void Execute() =>
+        public void Execute() =>
             Open();
 
         private void Open() =>
-            _windowService.Open(WindowId);
+            _windowService.Open(_windowId);
     }
 }

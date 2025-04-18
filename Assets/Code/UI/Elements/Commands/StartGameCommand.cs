@@ -2,14 +2,14 @@ using Code.Infrastructure.States;
 
 namespace Code.UI.Elements.Commands
 {
-    public class StartGameCommand : CommandBase
+    public class StartGameCommand : ICommand
     {
-        private IGameStateMachine _stateMachine;
+        private readonly IGameStateMachine _stateMachine;
 
-        public void Construct(IGameStateMachine stateMachine) =>
+        public StartGameCommand(IGameStateMachine stateMachine) =>
             _stateMachine = stateMachine;
 
-        public override void Execute() =>
+        public void Execute() =>
             StartGame();
 
         private void StartGame() =>
