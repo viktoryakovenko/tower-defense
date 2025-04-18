@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Code.Infrastructure.States
+﻿namespace Code.Infrastructure.States
 {
     public class LoadProgressState : IState
     {
@@ -11,20 +9,11 @@ namespace Code.Infrastructure.States
             _stateMachine = stateMachine;
         }
 
-        public void Enter()
-        {
-            LoadingImitation();
+        public void Enter() =>
             _stateMachine.Enter<MainMenuState, string>(Scenes.Menu);
-        }
 
         public void Exit()
         {
-        }
-
-        private static void LoadingImitation()
-        {
-            for (short i = 0; i < short.MaxValue/4; i++)
-                Debug.Log(i++ + --i);
         }
     }
 }
