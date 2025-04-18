@@ -7,7 +7,7 @@ namespace Code.StaticData.Sounds
     [Serializable]
     public class SoundConfig
     {
-        public SoundId Id;
+        public SoundId SoundId;
         public AudioClip Clip;
         public float Volume = 1f;
         public bool Loop = false;
