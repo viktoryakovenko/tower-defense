@@ -51,7 +51,7 @@ namespace Code.UI.Services.Factory
         {
             var toggleMappings = new Dictionary<ToggleButtonHandler, ICommand>
             {
-                { settings.SoundButton, new CompositeCommand(new SoundToggleCommand(_soundService), new PlaySoundCommand(_soundService)) },
+                { settings.SoundButton, new CompositeCommand(new SoundToggleCommand(_soundService), new PlaySoundCommand(_soundService, settings.MusicButton.AudioSource)) },
                 { settings.MusicButton, new MusicToggleCommand(true) },
             };
 
@@ -62,7 +62,7 @@ namespace Code.UI.Services.Factory
             };
 
             foreach (var pair in toggleMappings)
-                pair.Key.Construct(pair.Value, true);
+                pair.Key.Construct(pair.Value, true, _soundService);
 
             foreach (var pair in sliderMappings)
                 pair.Key.Construct(pair.Value);
