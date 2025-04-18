@@ -1,4 +1,4 @@
-namespace Code.Infrastructure.Services.Audio
+namespace Code.Audio.Services.MusicService
 {
     public interface IMusicService
     {

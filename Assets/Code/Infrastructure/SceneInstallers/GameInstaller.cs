@@ -1,6 +1,8 @@
+using Code.Audio.Services.MusicService;
+using Code.Audio.Services.SFXService;
+using Code.Audio.Services.VibrationService;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Coroutines;
-using Code.Infrastructure.Services.Audio;
 using Code.Infrastructure.States;
 using Code.Logic;
 using Zenject;

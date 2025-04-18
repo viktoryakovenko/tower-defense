@@ -1,6 +1,6 @@
 using System;
 
-namespace Code.Infrastructure.Services.Audio
+namespace Code.Audio.Services.VibrationService
 {
     public interface IVibrationService
     {

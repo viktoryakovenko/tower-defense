@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Code.UI.Elements.Commands
+namespace Code.Infrastructure.Commands
 {
     public class CompositeCommand : ICommand
     {

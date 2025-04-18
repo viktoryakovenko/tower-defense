@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Infrastructure.Services.Audio
+namespace Code.Audio.Services.SFXService
 {
     public class SFXService : ISFXService
     {

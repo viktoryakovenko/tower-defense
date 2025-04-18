@@ -1,6 +1,7 @@
-using UnityEngine;
+using Code.Infrastructure.Commands;
+using Code.UI.Elements.Commands;
 
-namespace Code.UI.Elements.Commands
+namespace Code.Audio.Elements.Commands
 {
     public class MusicToggleCommand : ICommand
     {

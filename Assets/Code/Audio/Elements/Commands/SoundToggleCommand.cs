@@ -1,7 +1,9 @@
-using Code.Infrastructure.Services.Audio;
+using Code.Audio.Services.SFXService;
+using Code.Infrastructure.Commands;
+using Code.UI.Elements.Commands;
 using UnityEngine;
 
-namespace Code.UI.Elements.Commands
+namespace Code.Audio.Elements.Commands
 {
     public class SoundToggleCommand : ICommand
     {
