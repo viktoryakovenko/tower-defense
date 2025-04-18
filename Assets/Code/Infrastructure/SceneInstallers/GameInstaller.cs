@@ -3,6 +3,7 @@ using Code.Audio.Services.SFXService;
 using Code.Audio.Services.VibrationService;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Coroutines;
+using Code.Infrastructure.Services;
 using Code.Infrastructure.States;
 using Code.Logic;
 using Zenject;
@@ -16,10 +17,16 @@ namespace Code.Infrastructure.SceneInstallers
             BindLoadingCurtain();
             BindCoroutineRunner();
             BindSceneLoader();
+            BindStaticData();
             BindSoundServices();
             BindGameStateMachine();
 
             BindGame();
+        }
+
+        private void BindStaticData()
+        {
+            Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
         private void BindGame() =>
