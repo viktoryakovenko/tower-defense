@@ -1,13 +1,13 @@
 using Code.Audio.Services.SFXService;
 using Code.Infrastructure.Commands;
-using UnityEngine;
 
 namespace Code.Audio.Elements.Commands
 {
     public class SoundToggleCommand : ICommand
     {
+        private readonly ISFXService _soundService;
+
         private bool _toggleEnabled;
-        private ISFXService _soundService;
 
         public SoundToggleCommand(ISFXService soundService)
         {
@@ -19,7 +19,6 @@ namespace Code.Audio.Elements.Commands
         {
             _toggleEnabled = !_toggleEnabled;
             _soundService.SetEnabled(_toggleEnabled);
-            Debug.Log(_soundService.IsEnabled);
         }
     }
 }
