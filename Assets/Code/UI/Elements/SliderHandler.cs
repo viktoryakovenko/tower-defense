@@ -9,10 +9,10 @@ namespace Code.UI.Elements
     {
         [SerializeField] private Slider _slider;
 
-        private ICommand _command;
+        private ICommand<float> _command;
         private bool _isActive;
 
-        public void Construct(ICommand command) =>
+        public void Construct(ICommand<float> command) =>
             _command = command;
 
         private void OnEnable() =>
@@ -22,6 +22,6 @@ namespace Code.UI.Elements
             _slider.onValueChanged.RemoveListener(ExecuteCommand);
 
         private void ExecuteCommand(float value) =>
-            _command.Execute();
+            _command.Execute(value);
     }
 }

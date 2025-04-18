@@ -7,7 +7,7 @@ namespace Code.Infrastructure.Services.Audio
         private bool _isEnabled = true;
         private float _currentVolume;
 
-        public bool IsEnabled => _isEnabled;
+        public bool IsEnabled => _isEnabled && _currentVolume > 0;
         public float CurrentVolume => _currentVolume;
 
         public void SetEnabled(bool isEnabled) =>
@@ -18,7 +18,7 @@ namespace Code.Infrastructure.Services.Audio
 
         public void PlaySound(string soundId)
         {
-            if (!_isEnabled) return;
+            if (!IsEnabled) return;
 
             Debug.Log($"Playing sound: {soundId} at volume {_currentVolume}");
         }

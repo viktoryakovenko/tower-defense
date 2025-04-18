@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Services;
+using Code.Infrastructure.Services.Audio;
 using Code.StaticData.Windows;
 using Code.UI.Elements;
 using Code.UI.Elements.Commands;
@@ -16,13 +17,15 @@ namespace Code.UI.Services.Factory
 
         private readonly IStaticDataService _staticData;
         private readonly IAssets _assets;
+        private readonly ISFXService _soundService;
 
         private Transform _uiRoot;
 
-        public UIFactory(IStaticDataService staticData, IAssets assets)
+        public UIFactory(IStaticDataService staticData, IAssets assets, ISFXService soundService)
         {
             _staticData = staticData;
             _assets = assets;
+            _soundService = soundService;
         }
 
         public void CreateShop()
@@ -47,16 +50,14 @@ namespace Code.UI.Services.Factory
         {
             var toggleMappings = new Dictionary<ToggleButtonHandler, ICommand>
             {
-                { settings.SoundButton, new SoundToggleCommand(true) },
+                { settings.SoundButton, new CompositeCommand(new SoundToggleCommand(_soundService), new PlaySoundCommand(_soundService)) },
                 { settings.MusicButton, new MusicToggleCommand(true) },
-                { settings.VibrationButton, new SoundToggleCommand(true) },
-                { settings.AdRemoveButton, new AdRemoveToggleCommand(true) }
             };
 
-            var sliderMappings = new Dictionary<SliderHandler, ICommand>
+            var sliderMappings = new Dictionary<SliderHandler, ICommand<float>>
             {
-                { settings.SoundSlider, new SoundToggleCommand(true) },
-                { settings.MusicSlider, new SoundToggleCommand(true) }
+                { settings.SoundSlider, new SoundSliderCommand(_soundService) },
+                { settings.MusicSlider, new SoundSliderCommand(_soundService) }
             };
 
             foreach (var pair in toggleMappings)

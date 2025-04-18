@@ -1,9 +1,12 @@
-using UnityEngine;
-
 namespace Code.UI.Elements.Commands
 {
     public interface ICommand
     {
         void Execute();
+    }
+
+    public interface ICommand<in T>
+    {
+        void Execute(T parameter);
     }
 }
