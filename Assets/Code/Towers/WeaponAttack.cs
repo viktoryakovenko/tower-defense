@@ -1,4 +1,3 @@
-using Code.Infrastructure.Services;
 using Code.Infrastructure.Services.GameObjectPool;
 using Code.Projectiles;
 using UnityEngine;

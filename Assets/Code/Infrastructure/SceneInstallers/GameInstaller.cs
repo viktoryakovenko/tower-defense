@@ -3,7 +3,6 @@ using Code.Audio.Services.SFXService;
 using Code.Audio.Services.VibrationService;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Coroutines;
-using Code.Infrastructure.Services;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.States;
 using Code.Logic;
