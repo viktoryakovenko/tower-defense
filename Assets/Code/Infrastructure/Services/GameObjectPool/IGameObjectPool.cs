@@ -8,7 +8,7 @@ namespace Code.Infrastructure.Services.GameObjectPool
         bool AutoExpand { get; set; }
         T Prefab { get; }
         Transform Container { get; }
-        T GetFreeElement(Action<T> onGetAction);
+        T GetFreeElement(Action<T> onGetAction = null);
         bool HasFreeElement(out T element);
     }
 }
