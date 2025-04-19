@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.GameObjectPool
 {
     public interface IGameObjectPool<T> where T : MonoBehaviour
     {

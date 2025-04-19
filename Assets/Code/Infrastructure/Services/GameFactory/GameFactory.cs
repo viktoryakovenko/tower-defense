@@ -1,8 +1,9 @@
+using Code.Infrastructure.Services.StaticData;
 using Code.StaticData;
 using Code.Towers;
 using UnityEngine;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.GameFactory
 {
     public class GameFactory : IGameFactory
     {

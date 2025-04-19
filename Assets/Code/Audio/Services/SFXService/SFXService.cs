@@ -1,4 +1,5 @@
 using Code.Infrastructure.Services;
+using Code.Infrastructure.Services.StaticData;
 using UnityEngine;
 
 namespace Code.Audio.Services.SFXService

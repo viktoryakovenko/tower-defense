@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.GameObjectPool
 {
     public class GameObjectPool<T> : IGameObjectPool<T> where T : MonoBehaviour
     {

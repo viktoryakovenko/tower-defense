@@ -1,4 +1,5 @@
 using Code.Infrastructure.Services;
+using Code.Infrastructure.Services.GameFactory;
 using Zenject;
 
 namespace Code.Infrastructure.SceneInstallers

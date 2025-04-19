@@ -1,7 +1,7 @@
 using Code.Towers;
 using UnityEngine;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.GameFactory
 {
     public interface IGameFactory
     {

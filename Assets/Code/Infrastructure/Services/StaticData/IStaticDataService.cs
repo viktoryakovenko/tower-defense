@@ -5,7 +5,7 @@ using Code.StaticData.Windows;
 using Code.Towers;
 using Code.UI.Services.Windows;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.StaticData
 {
     public interface IStaticDataService
     {

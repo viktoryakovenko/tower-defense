@@ -8,7 +8,7 @@ using Code.Towers;
 using Code.UI.Services.Windows;
 using UnityEngine;
 
-namespace Code.Infrastructure.Services
+namespace Code.Infrastructure.Services.StaticData
 {
     public class StaticDataService : IStaticDataService
     {
