@@ -74,5 +74,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c03afe0a007518418dd93b037ba4ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingCurtain: {fileID: 6792005720495525072, guid: 87ac766f41baba14184b02baca2378a6, type: 3}
-  _coroutineRunner: {fileID: 2520413945327338231, guid: da5fe9e32c33dd24291f25d8a628a850, type: 3}
+  _audioEmitterPrefab: {fileID: 2596860354240566019, guid: 76154f31946c15b4992f42f3a4e21723, type: 3}
+  _parentContainer: {fileID: 5462198819264490046, guid: c9ec0db92f7534649924f66c83c4c6a1, type: 3}

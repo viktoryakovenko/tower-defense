@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Code.Audio.Services.SFXService
 {
     public interface ISFXService
@@ -9,6 +7,6 @@ namespace Code.Audio.Services.SFXService
 
         void SetEnabled(bool isEnabled);
         void SetVolume(float volume);
-        void PlaySound(SoundId soundId, AudioSource audioSource);
+        void PlaySound(SoundId soundId);
     }
 }

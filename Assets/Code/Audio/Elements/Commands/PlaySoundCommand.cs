@@ -1,28 +1,20 @@
 using Code.Audio.Services.SFXService;
 using Code.Infrastructure.Commands;
-using UnityEngine;
 
 namespace Code.Audio.Elements.Commands
 {
     public class PlaySoundCommand : ICommand
     {
         private readonly ISFXService _soundService;
-        private readonly AudioSource _audioSource;
+        private readonly SoundId _soundId;
 
-        public PlaySoundCommand(ISFXService soundService, AudioSource audioSource)
+        public PlaySoundCommand(ISFXService soundService, SoundId soundId)
         {
             _soundService = soundService;
-            _audioSource = audioSource;
+            _soundId = soundId;
         }
 
-        public void Execute()
-        {
-            bool wasEnabled = _soundService.IsEnabled;
-
-            _soundService.SetEnabled(!wasEnabled);
-
-            if (!wasEnabled && _soundService.IsEnabled)
-                _soundService.PlaySound(SoundId.Click, _audioSource);
-        }
+        public void Execute() =>
+            _soundService.PlaySound(_soundId);
     }
 }

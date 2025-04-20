@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2284325770663390425}
   - component: {fileID: 5331212365570115912}
   - component: {fileID: 7012851858418072543}
+  - component: {fileID: 9101355288261655854}
   m_Layer: 5
   m_Name: AdsButton
   m_TagString: Untagged
@@ -133,12 +134,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  _soundId: 0
   _toggleImage: {fileID: 2284325770663390425}
   _activatedSprite: {fileID: 21300000, guid: 8c6bcddbaa8c0b54dad2c0b17ac97646, type: 3}
   _deactivatedSprite: {fileID: 21300000, guid: 92154e1577ee73c4fade5ace2b383b86, type: 3}
   _button: {fileID: 5331212365570115912}
+--- !u!114 &9101355288261655854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538114652071616530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &706841895148558205
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +863,7 @@ GameObject:
   - component: {fileID: 1787401153672564835}
   - component: {fileID: 6184097022678278949}
   - component: {fileID: 8354044958563054760}
+  - component: {fileID: 5432114857151325638}
   m_Layer: 5
   m_Name: SoundToggle
   m_TagString: Untagged
@@ -971,12 +984,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  _soundId: 0
   _toggleImage: {fileID: 1787401153672564835}
   _activatedSprite: {fileID: 21300000, guid: 08f80163cdc13404ab1a83d09da0951c, type: 3}
   _deactivatedSprite: {fileID: 21300000, guid: 1fec7b643cd1f3648807c21c8d1ba827, type: 3}
   _button: {fileID: 6184097022678278949}
+--- !u!114 &5432114857151325638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352400220166937604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &4279720995254489962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1554,7 @@ GameObject:
   - component: {fileID: 1118885501781554148}
   - component: {fileID: 1583230738906759784}
   - component: {fileID: 9075733185371882519}
-  - component: {fileID: 2625908997191958737}
+  - component: {fileID: 1293133186368912398}
   m_Layer: 5
   m_Name: MusicToggle
   m_TagString: Untagged
@@ -1651,108 +1675,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 2625908997191958737}
-  _soundId: 0
   _toggleImage: {fileID: 1118885501781554148}
   _activatedSprite: {fileID: 21300000, guid: 398ddabec35a5e545b597f41583fff08, type: 3}
   _deactivatedSprite: {fileID: 21300000, guid: ebd53bf46e930af4abb88ccedc81acf0, type: 3}
   _button: {fileID: 1583230738906759784}
---- !u!82 &2625908997191958737
-AudioSource:
+--- !u!114 &1293133186368912398
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5823119558802860460}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &5833220998845976658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2347,7 @@ GameObject:
   - component: {fileID: 4480485521095007760}
   - component: {fileID: 6007151687058937910}
   - component: {fileID: 2886321851901786081}
+  - component: {fileID: 204332980756909341}
   m_Layer: 5
   m_Name: VibrateButton
   m_TagString: Untagged
@@ -2528,12 +2468,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166a169c98349ccaff46ada67a269ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  _soundId: 0
   _toggleImage: {fileID: 4480485521095007760}
   _activatedSprite: {fileID: 21300000, guid: 89f970a0a1e5b4a45904cb34a4bba952, type: 3}
   _deactivatedSprite: {fileID: 21300000, guid: 0c4de1b53d5fb064086fca628afc0e27, type: 3}
   _button: {fileID: 6007151687058937910}
+--- !u!114 &204332980756909341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653196348810073938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &6771354798546058957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,6 +2534,7 @@ GameObject:
   - component: {fileID: 3002356023622142700}
   - component: {fileID: 1826390505852293877}
   - component: {fileID: 4176280407452771226}
+  - component: {fileID: 3389335718187075653}
   m_Layer: 5
   m_Name: AchievmentsButton
   m_TagString: Untagged
@@ -2704,6 +2656,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 1826390505852293877}
+--- !u!114 &3389335718187075653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806335974050913988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &6943428742432218167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,6 +3002,7 @@ GameObject:
   - component: {fileID: 1048928861047397941}
   - component: {fileID: 6962527994965742601}
   - component: {fileID: 4234858225569086784}
+  - component: {fileID: 6172723767627191596}
   m_Layer: 5
   m_Name: RateButton
   m_TagString: Untagged
@@ -3158,6 +3124,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 6962527994965742601}
+--- !u!114 &6172723767627191596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167650683604964338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 1
 --- !u!1 &8631314941910817792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,6 +3347,7 @@ GameObject:
   - component: {fileID: 8569007972764744399}
   - component: {fileID: 6030480808616101242}
   - component: {fileID: 1855836107032176494}
+  - component: {fileID: 4258173249643349961}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -3476,6 +3456,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4258173249643349961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865762617555244398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff799a1f9846454385de4c642549ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundId: 0
 --- !u!1 &9108000664527046478
 GameObject:
   m_ObjectHideFlags: 0
