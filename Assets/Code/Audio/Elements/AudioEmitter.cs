@@ -14,5 +14,11 @@ namespace Code.Audio.Elements
             _audioSource.loop = loop;
             _audioSource.Play();
         }
+
+        public void SetVolume(float volume) =>
+            _audioSource.volume = volume;
+
+        public void Stop() =>
+            _audioSource.Stop();
     }
 }
