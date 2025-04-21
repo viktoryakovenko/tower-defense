@@ -19,3 +19,9 @@ MonoBehaviour:
     Loop: 0
     RandomPitch: 0
     PitchRange: {x: 0, y: 0}
+  - SoundId: 2
+    Clip: {fileID: 8300000, guid: 7aa4144dfd7848c428ad2ab97120e076, type: 3}
+    Volume: 1
+    Loop: 0
+    RandomPitch: 0
+    PitchRange: {x: 0, y: 0}
