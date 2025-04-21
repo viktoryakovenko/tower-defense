@@ -1,4 +1,5 @@
 using Code.Audio.Elements;
+using Code.Audio.Services.AudioEmitterHub;
 using Code.Audio.Services.MusicService;
 using Code.Audio.Services.SFXService;
 using Code.Audio.Services.VibrationService;
@@ -26,7 +27,7 @@ namespace Code.Infrastructure.SceneInstallers
             BindCoroutineRunner();
             BindSceneLoader();
             BindStaticData();
-            BindSoundEmittersPool();
+            BindAudioEmittersHub();
             BindSoundServices();
             BindGameStateMachine();
 
@@ -62,7 +63,7 @@ namespace Code.Infrastructure.SceneInstallers
             Container.Bind<IVibrationService>().To<VibrationService>().AsSingle();
         }
 
-        private void BindSoundEmittersPool()
+        private void BindAudioEmittersHub()
         {
             var go = new GameObject(AUDIO_EMITTERS_POOL);
             DontDestroyOnLoad(go);
@@ -75,6 +76,8 @@ namespace Code.Infrastructure.SceneInstallers
                 .To<GameObjectPool<AudioEmitter>>()
                 .FromInstance(audioEmittersPool)
                 .AsSingle();
+
+            Container.Bind<IAudioEmittersHub>().To<AudioEmittersHub>().AsSingle();
         }
     }
 }
