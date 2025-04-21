@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Code.Audio.Elements
 {
+    [RequireComponent(typeof(AudioSource))]
     public class AudioEmitter : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
