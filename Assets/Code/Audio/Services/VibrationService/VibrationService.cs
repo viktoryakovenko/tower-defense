@@ -6,13 +6,14 @@ namespace Code.Audio.Services.VibrationService
     {
         public event Action<bool> ToggleChanged;
 
-        public bool IsEnabled { get; }
+        public bool IsEnabled => _isEnabled;
 
         private bool _isEnabled = true;
 
         public void Toggle()
         {
-            throw new NotImplementedException();
+            _isEnabled = !_isEnabled;
+            ToggleChanged?.Invoke(_isEnabled);
         }
 
         public void VibrateShort()
