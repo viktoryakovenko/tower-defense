@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Code.Audio.Services.MusicService
 {
@@ -6,27 +7,46 @@ namespace Code.Audio.Services.MusicService
     {
         public event Action<bool> ToggleChanged;
 
-        public float CurrentVolume { get; }
-        public bool IsEnabled { get; }
+        private bool _isEnabled;
+        private float _currentVolume;
+
+        public float CurrentVolume => _currentVolume;
+        public bool IsEnabled => _isEnabled && _currentVolume > 0;
 
         public void Toggle()
         {
-            throw new NotImplementedException();
+            _isEnabled = !_isEnabled;
+            ToggleChanged?.Invoke(_isEnabled);
+
+            if (!IsEnabled)
+                StopMusic();
         }
 
         public void SetVolume(float volume)
         {
-            throw new System.NotImplementedException();
+            if (volume == 0)
+            {
+                StopMusic();
+                _isEnabled = false;
+                ToggleChanged?.Invoke(_isEnabled);
+                return;
+            }
+
+            _currentVolume = Mathf.Clamp01(volume);
+            _isEnabled = true;
+            ToggleChanged?.Invoke(_isEnabled);
         }
 
         public void PlayMusic(string trackId)
         {
-            throw new System.NotImplementedException();
+            if (!IsEnabled) return;
+
+            Debug.Log("PLAY SOME MUSIC\u266a");
         }
 
         public void StopMusic()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("MUSIC STOPPED\u266a");
         }
     }
 }
