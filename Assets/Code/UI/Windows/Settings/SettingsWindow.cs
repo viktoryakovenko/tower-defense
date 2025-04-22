@@ -25,7 +25,6 @@ namespace Code.UI.Windows.Settings
         {
             var toggleMappings = new Dictionary<ToggleButtonHandler, ICommand>
             {
-                { SoundButton, new CompositeCommand(new SoundToggleCommand(_soundService), new SmartSFXToggleCommand(_soundService, new PlaySoundCommand(_soundService, SoundButton.GetComponent<ButtonSFX>().SoundId))) },
                 { MusicButton, new CompositeCommand(new MusicToggleCommand(true), new PlaySoundCommand(_soundService, MusicButton.GetComponent<ButtonSFX>().SoundId)) },
                 { VibrationButton, new CompositeCommand(new MusicToggleCommand(true), new PlaySoundCommand(_soundService, VibrationButton.GetComponent<ButtonSFX>().SoundId)) },
                 { AdRemoveButton, new CompositeCommand(new MusicToggleCommand(true), new PlaySoundCommand(_soundService, AdRemoveButton.GetComponent<ButtonSFX>().SoundId)) },
@@ -37,8 +36,7 @@ namespace Code.UI.Windows.Settings
                 { MusicSlider, new SoundSliderCommand(_soundService) }
             };
 
-            foreach (var pair in toggleMappings)
-                pair.Key.Construct(pair.Value, true);
+            SoundButton.Construct(new SmartSFXToggleCommand(_soundService, new PlaySoundCommand(_soundService, SoundButton.GetComponent<ButtonSFX>().SoundId)), _soundService);
 
             foreach (var pair in sliderMappings)
                 pair.Key.Construct(pair.Value);

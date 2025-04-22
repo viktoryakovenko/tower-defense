@@ -1,14 +1,14 @@
-using Code.Audio.Services.SFXService;
+using Code.Audio.Services;
 using Code.Infrastructure.Commands;
 
 namespace Code.Audio.Elements.Commands
 {
     public class SmartSFXToggleCommand : ICommand
     {
-        private readonly ISFXService _soundService;
+        private readonly IToggleable _soundService;
         private readonly PlaySoundCommand _playSoundCommand;
 
-        public SmartSFXToggleCommand(ISFXService soundService, PlaySoundCommand playSoundCommand)
+        public SmartSFXToggleCommand(IToggleable soundService, PlaySoundCommand playSoundCommand)
         {
             _soundService = soundService;
             _playSoundCommand = playSoundCommand;
@@ -18,10 +18,10 @@ namespace Code.Audio.Elements.Commands
         {
             bool wasEnabled = _soundService.IsEnabled;
 
-            _soundService.SetEnabled(!wasEnabled);
+            _soundService.Toggle();
 
-            if (!wasEnabled && _soundService.IsEnabled);
-            _playSoundCommand.Execute();
+            if (!wasEnabled && _soundService.IsEnabled)
+                _playSoundCommand.Execute();
         }
     }
 }

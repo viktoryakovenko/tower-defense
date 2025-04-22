@@ -1,14 +1,7 @@
-using System;
-
 namespace Code.Audio.Services.VibrationService
 {
-    public interface IVibrationService
+    public interface IVibrationService : IToggleable
     {
-        event Action<bool> OnVibrationEnabledChanged;
-
-        bool IsEnabled { get; }
-
-        void SetEnabled(bool isEnabled);
         void VibrateShort();
         void VibrateLong();
     }

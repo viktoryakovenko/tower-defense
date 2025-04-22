@@ -1,11 +1,9 @@
 namespace Code.Audio.Services.SFXService
 {
-    public interface ISFXService
+    public interface ISFXService : IToggleable
     {
-        bool IsEnabled { get; }
         float CurrentVolume { get; }
 
-        void SetEnabled(bool isEnabled);
         void SetVolume(float volume);
         void PlaySound(SoundId soundId);
     }

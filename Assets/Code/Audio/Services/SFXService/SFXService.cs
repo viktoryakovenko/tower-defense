@@ -7,6 +7,8 @@ namespace Code.Audio.Services.SFXService
 {
     public class SFXService : ISFXService
     {
+        public event Action<bool> ToggleChanged;
+
         private readonly IAudioEmittersHub _audioEmittersHub;
         private readonly IStaticDataService _dataService;
 
@@ -22,9 +24,10 @@ namespace Code.Audio.Services.SFXService
             _audioEmittersHub = audioEmittersHub;
         }
 
-        public void SetEnabled(bool isEnabled)
+        public void Toggle()
         {
-            _isEnabled = isEnabled;
+            _isEnabled = !_isEnabled;
+            ToggleChanged?.Invoke(_isEnabled);
 
             if (!IsEnabled)
                 StopAllSounds();
@@ -35,11 +38,14 @@ namespace Code.Audio.Services.SFXService
             if (volume == 0)
             {
                 StopAllSounds();
-                SetEnabled(false);
+                _isEnabled = false;
+                ToggleChanged?.Invoke(_isEnabled);
                 return;
             }
 
             _currentVolume = Mathf.Clamp01(volume);
+            _isEnabled = true;
+            ToggleChanged?.Invoke(_isEnabled);
 
             _audioEmittersHub.SetVolumeAll(_currentVolume);
         }

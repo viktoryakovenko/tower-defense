@@ -1,13 +1,17 @@
+using System;
+
 namespace Code.Audio.Services.MusicService
 {
     public class MusicService : IMusicService
     {
-        public float Volume { get; }
+        public event Action<bool> ToggleChanged;
+
+        public float CurrentVolume { get; }
         public bool IsEnabled { get; }
 
-        public void SetEnabled(bool isEnabled)
+        public void Toggle()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void SetVolume(float volume)

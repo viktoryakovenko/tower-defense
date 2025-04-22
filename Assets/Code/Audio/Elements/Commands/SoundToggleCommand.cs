@@ -9,16 +9,10 @@ namespace Code.Audio.Elements.Commands
 
         private bool _toggleEnabled;
 
-        public SoundToggleCommand(ISFXService soundService)
-        {
+        public SoundToggleCommand(ISFXService soundService) =>
             _soundService = soundService;
-            _toggleEnabled = _soundService.IsEnabled;
-        }
 
-        public void Execute()
-        {
-            _toggleEnabled = !_toggleEnabled;
-            _soundService.SetEnabled(_toggleEnabled);
-        }
+        public void Execute() =>
+            _soundService.Toggle();
     }
 }

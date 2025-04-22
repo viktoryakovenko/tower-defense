@@ -4,14 +4,16 @@ namespace Code.Audio.Services.VibrationService
 {
     public class VibrationService : IVibrationService
     {
-        public event Action<bool> OnVibrationEnabledChanged;
-
-        private bool _isEnabled = true;
+        public event Action<bool> ToggleChanged;
 
         public bool IsEnabled { get; }
 
-        public void SetEnabled(bool isEnabled) =>
-            _isEnabled = isEnabled;
+        private bool _isEnabled = true;
+
+        public void Toggle()
+        {
+            throw new NotImplementedException();
+        }
 
         public void VibrateShort()
         {

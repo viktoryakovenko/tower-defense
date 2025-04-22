@@ -1,3 +1,4 @@
+using Code.Audio.Services;
 using Code.Infrastructure.Commands;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,14 +14,15 @@ namespace Code.UI.Elements
         [SerializeField] private Button _button;
 
         private ICommand _command;
-        private bool _isActive;
+        private IToggleable _toggleable;
 
-        public void Construct(ICommand command, bool isActive)
+        public void Construct(ICommand command, IToggleable toggleable)
         {
             _command = command;
-            _isActive = isActive;
+            _toggleable = toggleable;
+            _toggleable.ToggleChanged += SetCurrentSprite;
 
-            SetCurrentSprite();
+            SetCurrentSprite(_toggleable.IsEnabled);
         }
 
         private void OnEnable() =>
@@ -32,16 +34,10 @@ namespace Code.UI.Elements
         private void ExecuteCommand()
         {
             _command.Execute();
-            ToggleSprite();
+            SetCurrentSprite(_toggleable.IsEnabled);
         }
 
-        private void ToggleSprite()
-        {
-            _isActive = !_isActive;
-            SetCurrentSprite();
-        }
-
-        private void SetCurrentSprite() =>
-            _toggleImage.sprite = _isActive ? _activatedSprite : _deactivatedSprite;
+        private void SetCurrentSprite(bool isActive) =>
+            _toggleImage.sprite = isActive ? _activatedSprite : _deactivatedSprite;
     }
 }
