@@ -1,4 +1,6 @@
+using Code.Audio.Services.MusicService;
 using Code.Audio.Services.SFXService;
+using Code.Audio.Services.VibrationService;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Services.StaticData;
 using Code.StaticData.Windows;
@@ -15,14 +17,23 @@ namespace Code.UI.Services.Factory
         private readonly IStaticDataService _staticData;
         private readonly IAssets _assets;
         private readonly ISFXService _soundService;
+        private readonly IMusicService _musicService;
+        private readonly IVibrationService _vibrationService;
 
         private Transform _uiRoot;
 
-        public UIFactory(IStaticDataService staticData, IAssets assets, ISFXService soundService)
+        public UIFactory(
+            IStaticDataService staticData,
+            IAssets assets,
+            ISFXService soundService,
+            IMusicService musicService,
+            IVibrationService vibrationService)
         {
             _staticData = staticData;
             _assets = assets;
             _soundService = soundService;
+            _musicService = musicService;
+            _vibrationService = vibrationService;
         }
 
         public void CreateShop()
@@ -34,7 +45,7 @@ namespace Code.UI.Services.Factory
             WindowConfig config = _staticData.ForWindow(WindowId.Settings);
             SettingsWindow settings = Object.Instantiate(config.Prefab, _uiRoot) as SettingsWindow;
 
-            settings.Construct(_soundService);
+            settings.Construct(_soundService, _musicService, _vibrationService);
             settings.SetupButtons();
         }
 
